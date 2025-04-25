@@ -1,0 +1,83 @@
+{% extends 'blog/base.html' %}
+{% block body %}
+<div class="container pt-3">
+    <div class="row">
+    <div class="col-1 ml-0"> </div>
+    <div class="col-9 custom-post bg-light h-5">
+
+        <p class="custom-post-title post-list-box text-light bg-dark text-center"> Post list </p>
+        {% if user.is_authenticated %}
+        <div class="custom-post-add">
+            <a  href="{% url "blog:editPost" %}" class="  text-dark bg-light text-center"> Add Post </a>  
+        </div>
+        {% endif %}
+
+        <div class="post-border  ">
+                <div class='container post-list-container  d-flex justify-content-center'>
+                        <table class="post-list col-12">
+                            <thead class="post-head" >
+                                <tr>
+                                    <th> Post name </th>
+                                    <th> Post detail </th>
+                                    <th> Last comment </th>
+                                    <th> Author </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for post in page_obj %}
+                                <tr>
+                                    <td> <a href="{% url "blog:postDetail" post.id %}"> {{ post.title | truncatechars:20 }} </a> <br> </td>
+                                    <td> {{ post.text  | truncatechars:9 | safe }} </td>
+                                    <td>  {{  post.last_comment.user.username  }} </td>
+                                    <td> {{ post.user.username }} </td>
+                                </tr> 
+                                {% endfor %}                           
+                            </tbody>
+                        </table>
+            </div>
+                    <!-- Pagination -->
+            <div class=" d-flex justify-content-center">
+                <nav  aria-label=" ...">
+                <ul class="pagination">
+
+                    {% if page_obj.has_previous %}
+                        <li class="page-item disabled">
+                            {% if  page_obj.number != 1 %}
+                            <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+                            {% endif %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                        </li>
+                    {% endif %}
+                    {% for i in backward  %}
+                        {% if i >= 1 %}
+                        <li class="page-item" ><a class="page-link"  href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    <li class="page-item active">
+                    <span class="page-link">
+                        {{ page_obj.number }}
+                        <span class="sr-only">{{ page_obj.number }}</span>
+                    </span>
+                    </li>
+                    {% for i in forward  %}
+                        {% if i <= paginator.num_pages %}
+                        <li class="page-item" ><a class="page-link"  href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </li>
+                    </li>
+                    {% if page_obj.has_next %}
+                         <li class="page-item" ><a class="page-link"  href="?page={{ page_obj.next_page_number }}">next</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a></li>
+                    {% endif %}
+                    </li>
+                    
+                </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-1 mr-0"> </div>
+        </div>
+
+</div>
+{% endblock body %}

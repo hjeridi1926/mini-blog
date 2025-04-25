@@ -1,0 +1,197 @@
+.active {
+    background-color: #e6f2f1;
+    border-radius: 10px;
+}
+
+body nav li:hover {
+    background-color: #d5edec;
+    border-radius: 10px;
+}
+
+body nav span:hover {
+    background-color: #d5edec;
+    border-radius: 10px;
+}
+
+body nav span {
+    min-width: 50px;
+    text-align: center;
+}
+
+/* Register styling */
+.custom-form {
+    border: 1px  #d1e3e1;
+    box-shadow: 8px 9px 15px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 8px 9px 15px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 8px 9px 15px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    overflow: auto;
+}
+
+.form-register {
+    min-height: 470px;
+    max-height: 700px;
+}
+
+.custom-form-title {
+    border-radius: 10px 10px 0px 0px;
+    font-size: 22px;
+}
+
+
+.submit-form  button{
+    width: 100%;
+    background-color: #015c8a;
+    border: 2px black;
+    
+}
+
+.submit-form div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+/* login styling*/
+.form-login {
+    min-height: 300px;
+    max-height: 600px;
+}
+
+/* Post styling*/
+
+.custom-post-title {
+    margin-bottom: 0px;
+    border-radius: 10px 10px 0px 0px;
+    font-size: 22px;
+}
+
+.post-list {
+    width: 100%;
+    justify-content: center;
+}
+
+.post-list tr th:first-child,th:nth-child(2) {
+    margin-right: 10px;
+}
+
+.post-list * {
+    text-align: center;
+}
+
+.custom-post{
+    border: 1px  #343a40;
+    box-shadow: 8px 9px 15px 0px rgba(82, 75, 75, 0.15);
+    -webkit-box-shadow: 8px 9px 15px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 8px 9px 15px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    width: 100%;
+}
+
+.custom-post button {
+    width: 100%;
+}
+.pagination * {
+    color: #343a40;
+}
+
+
+.post-border{
+    /* border: 1px #343a40 solid; */
+    margin: 0px;
+    padding: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.post-head {
+    background-color: #47889e;
+    color: white;
+}
+
+.post-list-container{
+    padding: 0px;
+    margin: 0px;
+}
+
+.post-list tbody tr td {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fefff7+0,d6d8cd+100 */
+    background: rgb(254,255,247); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(254,255,247,1) 0%, rgba(214,216,205,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(254,255,247,1) 0%,rgba(214,216,205,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(254,255,247,1) 0%,rgba(214,216,205,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefff7', endColorstr='#d6d8cd',GradientType=0 ); /* IE6-9 */
+    border: solid 1px #47889e;
+}
+
+.post-list table * {
+    overflow: hidden;
+    padding: 0px;
+}
+
+/* edit post styling */
+.editable {
+    height: 200px;
+    -webkit-box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12); 
+    box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12);
+    overflow: scroll;
+}
+
+#username-comment {
+    -webkit-box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12); 
+    box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12);
+}
+/* Post details */
+.detail_div {
+    min-height: 200px;
+    -webkit-box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12); 
+    box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12);
+}
+
+/* Comment container */
+.comment-container{
+    -webkit-box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12); 
+    box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12);
+}
+
+.last-comment{
+    -webkit-box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12);
+    box-shadow: 7px 8px 31px 4px rgba(0,0,0,0.12);
+}
+
+.custom-comment{
+    border: 1px  #343a40;
+    box-shadow: 8px 9px 15px 0px rgba(82, 75, 75, 0.15);
+    -webkit-box-shadow: 8px 9px 15px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 8px 9px 15px 0px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    padding: 0px 0px;
+    
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+
+/* confirme delete box container */
+.form-delete {
+    min-height: 50px;
+    max-height: 200px;
+    margin-top: 100px;
+    border:rgb(157, 248, 236) 3px solid;
+}
+
+.custom-post-add {
+    margin-bottom: 0px;
+    width: 100%;
+    font-size: 22px;
+    text-align: center;
+}
+

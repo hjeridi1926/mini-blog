@@ -1,0 +1,58 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+{% endblock css %}
+
+{% block body %}
+<div class="container pt-3">
+    <div class="row">
+        <div class="col-2 ml-0"> </div>
+        <div class="col-8 custom-post bg-light h-5">
+            <p class="custom-post-title post-list-box text-light bg-dark text-center">  {{ object.title }} </p>
+            <form>
+            <div class="">
+                <div class="col-12 detail_div  col-12 " > {{ object.text | safe }} </div>
+                <div class=" m-0  p-0 d-flex justify-content-center row">
+                    <a class="col-3"  href="{% url "blog:editComment" object.id %}"><button type="button" class=" btn btn-primary">Add comment</button></a>
+                    
+                    
+                    {% if object.user == user or user.is_superuser %}
+                    <a class="col-3"  href="{% url "blog:deletePost" object.id %}"><button type="button" class=" btn btn-danger">Delete </button> </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-2 mr-0"> </div>
+    </div>
+
+    {% if comments %}
+        <div class="row">
+        <div class="col-2 ml-0"></div>
+        <div class="col-8 custom-comment bg-light h-5">
+            <p class="custom-post-title post-list-box text-light bg-dark text-center"> Comments </p>
+            {%  for comment in comments %}
+            <div class="comment-container">
+            <div class='row'>
+                <div class="col-2 text-center"><p> {{ comment.user.username }}  </p></div>
+                <div class="col-10" >{{ comment.text | safe }}</div>
+            </div>
+            {% if comment.user == user or user.is_superuser %}
+            <div class="   p-0 d-flex justify-content-end row">
+                    <a class="col-3"  href="{% url "blog:deleteComment" comment.id %}"><button type="button" class=" ml-auto btn btn-danger">Delete </button> </a>
+            </div>
+            {% endif %}
+            </div>
+            {% endfor %}
+       {% endif %}
+        <div class="col-2 mr-0"> </div>
+    </div>
+</div>
+{% endblock body %}
+
+
+{% block js %}
+<script src="{% static 'js/medium-editor.min.js' %}"></script>
+<script src="{% static 'js/edit.js' %}" ></script>
+{% endblock js %}

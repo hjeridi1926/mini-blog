@@ -1,0 +1,65 @@
+{% extends 'blog/base.html' %}
+{% load custom_tags %}
+{% block body %}
+<div class="container pt-3">
+    <div class="row">
+    <div class="col-3"> </div>
+    <div class="col-6 custom-form form-register bg-light h-5">
+        
+        <p class="custom-form-title text-light bg-dark text-center"> Register form </p>
+        <!--Register form -->
+        <div class="container "> 
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                <label class="ml-2" for="email-address">{{ UserForm.username.label }}</label>
+                {{ UserForm.username | add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                <label class="ml-2" for="password"> {{ UserForm.password1.label }}</label>
+                {{ UserForm.password1 | add_class:"form-control " }}
+                </div>
+                <div>
+                <label class="ml-2" for="password"> {{ UserForm.password2.label }}</label>
+                {{ UserForm.password2 | add_class:"form-control" }}
+                </div>
+                <div>
+                <label class="ml-2" for="password"> {{ UserDetail.hobby.label }}</label>
+                {{ UserDetail.hobby | add_class:"form-control" }}
+                </div>
+                <div>
+                  {% for err in UserForm.username.errors %}
+                        <p> {{ err }}  </p>
+                  {% endfor %}     
+                  {% for err in UserForm.password1.errors %}
+                        <p> {{ err }}  </p>
+                  {% endfor %}          
+                  {% for err in UserForm.password2.errors %}
+                        <p> {{ err }}  </p>
+                  {% endfor %}
+                </div>
+                {% if result %}
+                <div class="row  submit-form"> 
+                    <div class="col-2"></div>
+                    <div class="col-8  d-flex justify-content-center"> 
+                        <div   class="p-1 btn btn-success"> {{ result }}</div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                {% else %}
+                <div class="row  submit-form"> 
+                    <div class="col-2"></div>
+                    <div class="col-8"> 
+                        <button  type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                {% endif %}
+            </form>
+        </div>
+        <!--Register form end-->
+    </div>
+    <div class="col-3"> </div>
+    </div>
+</div>
+{% endblock body %}

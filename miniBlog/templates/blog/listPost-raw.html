@@ -1,0 +1,93 @@
+{% extends 'blog/base.html' %}
+{% block body %}
+<div class="container pt-3">
+    <div class="row">
+    <div class="col-1 ml-0"> </div>
+    <div class="col-9 custom-post bg-light h-5">
+
+        <p class="custom-post-title post-list-box text-light bg-dark text-center"> Post list </p>
+        {% if user.is_authenticated %}
+        <div class="post-border  ">
+                <div class='container post-list-container  d-flex justify-content-center'>
+                        <table class="post-list col-12">
+                            <thead class="post-head" >
+                                <tr>
+                                    <th> Post name </th>
+                                    <th> Post detail </th>
+                                    <th> Last comment </th>
+                                    <th> Author </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> Post 1  </td>
+                                    <td> detail 1 </td>
+                                    <td> Last comment by mouslih </td>
+                                    <td> Mehdi1  </td>
+                                </tr>
+                                <tr>
+                                    <td> Post 2  </td>
+                                    <td> detail 2 </td>
+                                    <td> Last comment by mahdi </td>
+                                    <td> mehdi2 </td>
+                                </tr>
+                                <tr>
+                                    <td> Post 2  </td>
+                                    <td> detail 2 </td>
+                                    <td> Last comment by mahdi </td>
+                                    <td> mehdi2 </td>
+                                </tr>
+                                <tr>
+                                    <td> Post 2  </td>
+                                    <td> detail 2 </td>
+                                    <td> Last comment by mahdi </td>
+                                    <td> mehdi2 </td>
+                                </tr>
+                                <tr>
+                                    <td> Post 2  </td>
+                                    <td> detail 2 </td>
+                                    <td> Last comment by mahdi </td>
+                                    <td> mehdi2 </td>
+                                </tr>
+                                <tr>
+                                    <td> Post 2  </td>
+                                    <td> detail 2 </td>
+                                    <td> Last comment by mahdi </td>
+                                    <td> mehdi2 </td>
+                                </tr>
+                                <tr>
+                                    <td> Post 2  </td>
+                                    <td> detail 2 </td>
+                                    <td> Last comment by mahdi </td>
+                                    <td> mehdi2 </td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+            </div>
+                    <!-- Pagination -->
+            <div class=" d-flex justify-content-center">
+                <nav  aria-label=" ...">
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active">
+                    <span class="page-link">
+                        2
+                        <span class="sr-only">(current)</span>
+                    </span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-1 mr-0"> </div>
+        </div>
+
+</div>
+{% endblock body %}
