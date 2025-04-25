@@ -7,7 +7,7 @@ from random import randrange
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "miniBlog.settings")
 django.setup()
 
-
+#Test
 from blog.models import Post,User,userDetail
 
 def run():
